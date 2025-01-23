@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="MainScene.brs" />
+    <script type="text/brightscript" uri="pkg:/components/utils/InitScreenStack.brs" />
+    <script type="text/brightscript" uri="pkg:/components/utils/GridScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/components/utils/RunContentTask.brs" />
+    <children>
+        <Overhang
+            id="overhang"
+            showOptions="false"
+            showClock="true"
+            
+        />
+        <Label 
+            id="loaderIndicator" 
+            text="Carregando..." 
+            width="1280" 
+            height="720"
+            translation="[0,0]"
+            horizAlign="center"
+            vertAlign="center"
+            visible="false"
+            font="font:MediumBoldSystemFont"
+        />
+    </children>
+</component>
