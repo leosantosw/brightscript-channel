@@ -1,0 +1,104 @@
+{
+  "Ação": [
+    {
+      "nome": "Sonic the Hedgehog 3",
+      "descrição": "Sonic, Knuckles e Tails se reúnem contra um novo e poderoso adversário, Shadow, um vilão misterioso com poderes únicos. A equipe Sonic precisa buscar uma aliança improvável para parar Shadow e proteger o planeta.",
+      "duração": "120",
+      "imagem": "https://www.themoviedb.org/t/p/w500/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg"
+    },
+    {
+      "nome": "Kraven the Hunter",
+      "descrição": "Kraven Kravinoff tem uma relação complexa com seu pai gangster, Nikolai, o que o motiva a se vingar e se tornar um dos maiores caçadores do mundo, além de enfrentar um terrível vilão.",
+      "duração": "133",
+      "imagem": "https://www.themoviedb.org/t/p/w500/i47IUSsN126K11JUzqQIOi1Mg1M.jpg"
+    },
+    {
+      "nome": "Venom: The Last Dance",
+      "descrição": "Eddie e Venom estão sendo caçados por seus próprios mundos. Juntos, precisam tomar uma decisão devastadora para encerrar sua última dança.",
+      "duração": "121",
+      "imagem": "https://www.themoviedb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg"
+    },
+    {
+      "nome": "Sonic the Hedgehog 3",
+      "descrição": "Sonic, Knuckles e Tails se reúnem contra um novo e poderoso adversário, Shadow, um vilão misterioso com poderes únicos. A equipe Sonic precisa buscar uma aliança improvável para parar Shadow e proteger o planeta.",
+      "duração": "120",
+      "imagem": "https://www.themoviedb.org/t/p/w500/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg"
+    },
+    {
+      "nome": "Kraven the Hunter",
+      "descrição": "Kraven Kravinoff tem uma relação complexa com seu pai gangster, Nikolai, o que o motiva a se vingar e se tornar um dos maiores caçadores do mundo, além de enfrentar um terrível vilão.",
+      "duração": "133",
+      "imagem": "https://www.themoviedb.org/t/p/w500/i47IUSsN126K11JUzqQIOi1Mg1M.jpg"
+    },
+    {
+      "nome": "Venom: The Last Dance",
+      "descrição": "Eddie e Venom estão sendo caçados por seus próprios mundos. Juntos, precisam tomar uma decisão devastadora para encerrar sua última dança.",
+      "duração": "121",
+      "imagem": "https://www.themoviedb.org/t/p/w500/aosm8NMQ3UyoBVpSxyimorCQykC.jpg"
+    }
+  ],
+  "Aventura": [
+    {
+      "nome": "Mufasa: The Lion King",
+      "descrição": "Mufasa, um filhote perdido e sozinho, conhece um leão simpático chamado Taka, herdeiro de uma linhagem real. Essa reunião desencadeia uma jornada de autodescoberta e aventura.",
+      "duração": "100",
+      "imagem": "https://www.themoviedb.org/t/p/w500/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg"
+    },
+    {
+      "nome": "Moana 2",
+      "descrição": "Moana embarca em uma nova jornada para águas perigosas de Oceania com Maui e uma nova tripulação, buscando enfrentar desafios épicos.",
+      "duração": "104",
+      "imagem": "https://www.themoviedb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg"
+    },
+    {
+      "nome": "Gladiator II",
+      "descrição": "Lucius, anos após a morte de Maximus, se vê forçado a lutar na arena contra os impérios tirânicos. Ele precisa encontrar forças no passado para restaurar a glória de Roma.",
+      "duração": "141",
+      "imagem": "https://www.themoviedb.org/t/p/w500/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg"
+    },
+    {
+      "nome": "Mufasa: The Lion King",
+      "descrição": "Mufasa, um filhote perdido e sozinho, conhece um leão simpático chamado Taka, herdeiro de uma linhagem real. Essa reunião desencadeia uma jornada de autodescoberta e aventura.",
+      "duração": "100",
+      "imagem": "https://www.themoviedb.org/t/p/w500/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg"
+    },
+    {
+      "nome": "Moana 2",
+      "descrição": "Moana embarca em uma nova jornada para águas perigosas de Oceania com Maui e uma nova tripulação, buscando enfrentar desafios épicos.",
+      "duração": "104",
+      "imagem": "https://www.themoviedb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg"
+    },
+    {
+      "nome": "Gladiator II",
+      "descrição": "Lucius, anos após a morte de Maximus, se vê forçado a lutar na arena contra os impérios tirânicos. Ele precisa encontrar forças no passado para restaurar a glória de Roma.",
+      "duração": "141",
+      "imagem": "https://www.themoviedb.org/t/p/w500/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg"
+    }
+  ],
+  "Animação": [
+    {
+      "nome": "Devara: Part 1",
+      "descrição": "Devara, um homem destemido de uma região costeira, embarca em uma jornada perigosa para salvar sua terra, enquanto seu irmão trama uma conspiração contra ele.",
+      "duração": "130",
+      "imagem": "https://www.themoviedb.org/t/p/w500/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg"
+    },
+    {
+      "nome": "Le Jardinier",
+      "descrição": "Serge Shuster, um conselheiro do Presidente da República, se vê condenado à morte e envolvido em uma trama de estado, com sua família em perigo. A única esperança é seu jardineiro, Léo.",
+      "duração": "95",
+      "imagem": "https://www.themoviedb.org/t/p/w500/pqulyfkug9A7TmmRn5zrbRA8TAY.jpg"
+    },
+    {
+      "nome": "Devara: Part 1",
+      "descrição": "Devara, um homem destemido de uma região costeira, embarca em uma jornada perigosa para salvar sua terra, enquanto seu irmão trama uma conspiração contra ele.",
+      "duração": "130",
+      "imagem": "https://www.themoviedb.org/t/p/w500/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg"
+    },
+    {
+      "nome": "Le Jardinier",
+      "descrição": "Serge Shuster, um conselheiro do Presidente da República, se vê condenado à morte e envolvido em uma trama de estado, com sua família em perigo. A única esperança é seu jardineiro, Léo.",
+      "duração": "95",
+      "imagem": "https://www.themoviedb.org/t/p/w500/pqulyfkug9A7TmmRn5zrbRA8TAY.jpg"
+    }
+  ]
+}
