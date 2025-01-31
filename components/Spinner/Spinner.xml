@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Spinner" extends="Group">
+    <script type="text/brightscript" uri="Spinner.brs" />
+    <children>
+        <BusySpinner
+            id="exampleBusySpinner"
+            spinInterval="1"
+        />
+    </children>
+</component>
