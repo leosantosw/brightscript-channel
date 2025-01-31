@@ -16,7 +16,6 @@ sub showChannel()
     while true
         msg = wait(0, m.port)
         msgType = type(msg)
-        print msgType
 
         if msgType = "roSGScreenEvent"
             print msg.GetMessage()
