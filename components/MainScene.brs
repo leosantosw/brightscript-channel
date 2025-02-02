@@ -2,21 +2,21 @@ function init()
     m.top.backgroundUri = ""
     m.top.backgroundColor = "#0E1420"
     m.buttons = CreateObject("roAssociativeArray")
-    m.buttons.canais = m.top.findNode("canaisButton")
-    m.buttons.filmes = m.top.findNode("filmesButton")
+    m.buttons.channels = m.top.findNode("channelsButton")
+    m.buttons.movies = m.top.findNode("moviesButton")
     m.buttons.series = m.top.findNode("seriesButton")
     m.buttons.playlist = m.top.findNode("playlistButton")
-    m.buttons.config = m.top.findNode("configButton")
+    m.buttons.settings = m.top.findNode("settingsButton")
     
     m.borders = CreateObject("roAssociativeArray")
-    m.borders.canais = m.top.findNode("canaisBorder")
-    m.borders.filmes = m.top.findNode("filmesBorder")
+    m.borders.channels = m.top.findNode("channelsBorder")
+    m.borders.movies = m.top.findNode("moviesBorder")
     m.borders.series = m.top.findNode("seriesBorder")
     m.borders.playlist = m.top.findNode("playlistBorder")
-    m.borders.config = m.top.findNode("configBorder")
+    m.borders.settings = m.top.findNode("settingsBorder")
     
-    m.buttons.canais.setFocus(true)
-    m.currentFocus = "canais"
+    m.buttons.channels.setFocus(true)
+    m.currentFocus = "channels"
     updateFocus()
 end function
 
@@ -30,40 +30,45 @@ end sub
 function onKeyEvent(key as String, press as Boolean) as Boolean
     if press then
         nextFocus = invalid
+
+        if key = "OK" then
+            ClickButton(m.currentFocus)
+            return true
+        end if
         
         if key = "right" then
-            if m.currentFocus = "canais" then
-                nextFocus = "filmes"
-            else if m.currentFocus = "filmes" then
+            if m.currentFocus = "channels" then
+                nextFocus = "movies"
+            else if m.currentFocus = "movies" then
                 nextFocus = "series"
             else if m.currentFocus = "playlist" then
-                nextFocus = "config"
+                nextFocus = "settings"
             end if
         else if key = "left" then
             if m.currentFocus = "series" then
-                nextFocus = "filmes"
-            else if m.currentFocus = "config" then
+                nextFocus = "movies"
+            else if m.currentFocus = "settings" then
                 nextFocus = "playlist"
-            else if m.currentFocus = "filmes" then
-                nextFocus = "canais"
+            else if m.currentFocus = "movies" then
+                nextFocus = "channels"
             else if m.currentFocus = "playlist" then
-                nextFocus = "canais"
+                nextFocus = "channels"
             end if
         else if key = "down" then
-            if m.currentFocus = "filmes" then
+            if m.currentFocus = "movies" then
                 nextFocus = "playlist"
             else if m.currentFocus = "series" then
-                nextFocus = "config"
-            else if m.currentFocus = "canais" then
-                nextFocus = "filmes"
+                nextFocus = "settings"
+            else if m.currentFocus = "channels" then
+                nextFocus = "movies"
             end if
         else if key = "up" then
             if m.currentFocus = "playlist" then
-                nextFocus = "filmes"
-            else if m.currentFocus = "config" then
+                nextFocus = "movies"
+            else if m.currentFocus = "settings" then
                 nextFocus = "series"
-            else if m.currentFocus = "filmes" or m.currentFocus = "series" then
-                nextFocus = "canais"
+            else if m.currentFocus = "movies" or m.currentFocus = "series" then
+                nextFocus = "channels"
             end if
         end if
         
@@ -75,4 +80,8 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         end if
     end if
     return false
+end function
+
+function ClickButton(button as String)
+    print "ClickButton: "; button
 end function

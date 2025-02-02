@@ -11,13 +11,13 @@
         layoutDirection="horiz"
         itemSpacings="[40]"
     >
-        <!-- Canais -->
+        <!-- Channels -->
         <Group 
-            id="canaisButton"
+            id="channelsButton"
             focusable="true"
         >
             <Poster 
-                id="canaisBorder"
+                id="channelsBorder"
                 uri="pkg:/images/rounded-$$RES$$.9.png"
                 width="500"
                 height="510"
@@ -41,7 +41,7 @@
                     blendColor="#F9F9F9"
                 />
                 <Label 
-                    text="Canais" 
+                    text="Channels" 
                     color="#F9F9F9" 
                     height="200" 
                     width="490"
@@ -63,13 +63,13 @@
                 layoutDirection="horiz"
                 itemSpacings="[30]"
             >
-                <!-- Filmes -->
+                <!-- Movies -->
                 <Group 
-                    id="filmesButton"
+                    id="moviesButton"
                     focusable="true"
                 >
                     <Poster 
-                        id="filmesBorder"
+                        id="moviesBorder"
                         uri="pkg:/images/rounded-$$RES$$.9.png"
                         width="250"
                         height="255"
@@ -93,7 +93,7 @@
                             blendColor="#F9F9F9"
                         />
                         <Label 
-                            text="Filmes" 
+                            text="Movies" 
                             color="#F9F9F9" 
                             height="90" 
                             width="240"
@@ -105,6 +105,7 @@
                     </Rectangle>
                 </Group>
 
+                <!-- Series -->
                 <Group 
                     id="seriesButton"
                     focusable="true"
@@ -134,7 +135,7 @@
                             blendColor="#F9F9F9"
                         />
                         <Label 
-                            text="Séries" 
+                            text="Series" 
                             color="#F9F9F9" 
                             height="90" 
                             width="240"
@@ -192,12 +193,13 @@
                     </Rectangle>
                 </Group>
 
+                <!-- Settings -->
                 <Group 
-                    id="configButton"
+                    id="settingsButton"
                     focusable="true"
                 >
                     <Poster 
-                        id="configBorder"
+                        id="settingsBorder"
                         uri="pkg:/images/rounded-$$RES$$.9.png"
                         width="250"
                         height="255"
@@ -221,7 +223,7 @@
                             blendColor="#F9F9F9"
                         />
                         <Label 
-                            text="Ajustes" 
+                            text="Settings" 
                             color="#F9F9F9" 
                             height="90" 
                             width="240"
