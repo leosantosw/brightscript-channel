@@ -8,3 +8,8 @@ splash_color=#808080
 splash_min_time=0
 ui_resolutions=fhd
 uri_resolution_autosub=$$RES$$,SD,HD,FHD
+
+# Channel Assets
+mm_icon_focus_sd=pkg:/images/channel-poster.jpg
+mm_icon_focus_hd=pkg:/images/channel-poster.jpg
+mm_icon_focus_fhd=pkg:/images/channel-poster.jpg
