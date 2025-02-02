@@ -5,6 +5,7 @@
         <BusySpinner
             id="exampleBusySpinner"
             spinInterval="1"
+            visible="true"
         />
     </children>
 </component>
