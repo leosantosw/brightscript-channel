@@ -1,75 +1,78 @@
-sub Init ()
-    m.top.SetField("backgroundColor", "#191a19")
-    m.top.SetField("backgroundURI", "pkg:/images/background.jpg")
+function init()
+    m.top.backgroundUri = ""
+    m.top.backgroundColor = "#0E1420"
+    m.buttons = CreateObject("roAssociativeArray")
+    m.buttons.canais = m.top.findNode("canaisButton")
+    m.buttons.filmes = m.top.findNode("filmesButton")
+    m.buttons.series = m.top.findNode("seriesButton")
+    m.buttons.playlist = m.top.findNode("playlistButton")
+    m.buttons.config = m.top.findNode("configButton")
     
-    m.gridContainer = m.top.findNode("gridContainer")
-    centerx = (1280) / 2
-    centery = (720) / 2
-    m.gridContainer.translation = [ centerx, centery ]   
-     
-    m.focusRing = m.top.findNode("focusRing")
-    m.nodesToFocus = [
-        m.top.findNode("channels"),
-        m.top.findNode("playlist"),
-        m.top.findNode("settings"),
-    ]
+    m.borders = CreateObject("roAssociativeArray")
+    m.borders.canais = m.top.findNode("canaisBorder")
+    m.borders.filmes = m.top.findNode("filmesBorder")
+    m.borders.series = m.top.findNode("seriesBorder")
+    m.borders.playlist = m.top.findNode("playlistBorder")
+    m.borders.config = m.top.findNode("configBorder")
+    
+    m.buttons.canais.setFocus(true)
+    m.currentFocus = "canais"
+    updateFocus()
+end function
 
-    m.nodesToFocus[0].setFocus(true)
-    m.top.observeField("focusedChild", "onFocusedChildChange")
-    ' InitSpinner()
-end sub
-
-sub onFocusedChildChange()
-    focusedChild = m.top.focusedChild.focusedChild
-
-    if focusedChild <> invalid and focusedChild.id <> "" then
-        print "Currently focused element: " + focusedChild.id
-        m.focusRing.translation = [
-            focusedChild.translation[0] + 637,
-            focusedChild.translation[1] + 356
-        ]
-        m.currentFocused = focusedChild.focusedChild.focusedChild.id
-    end if
-end sub
-
-sub focusNextSibling()
-    nodeToFocus = invalid
-
-    'focus the next child
-    for i = 0 to m.nodesToFocus.count() - 1
-        child = m.nodesToFocus[i]
-        'skip the focusRing
-        if child.id = "focusRing"
-            continue for
-        end if
-
-        if child.hasFocus()
-            nodeToFocus = m.nodesToFocus[i + 1]
-            exit for
-        end if
+sub updateFocus()
+    for each key in m.borders
+        m.borders[key].opacity = 0
     end for
-    'if we have no node to focus, then focus the first node that's not the focusRing
-    if nodeToFocus = invalid
-        nodeToFocus = m.nodesToFocus[0]
-    end if
-    nodeToFocus.setFocus(true)
+    m.borders[m.currentFocus].opacity = 1
 end sub
 
-function onKeyEvent(key as string, press as boolean) as boolean
-    'only handle key up events
-    if press <> true
-        return false
-    end if
-
-    'simple focus management for now, just move forwards or backwards
-    if key = "right"  or key = "left" ' or key = "down" or key = "up"
-        focusNextSibling()
-        return true
-    end if
-
-    if key = "OK" then
-        print "OK key pressed, focused: ";  m.currentFocused 
-        return true
+function onKeyEvent(key as String, press as Boolean) as Boolean
+    if press then
+        nextFocus = invalid
+        
+        if key = "right" then
+            if m.currentFocus = "canais" then
+                nextFocus = "filmes"
+            else if m.currentFocus = "filmes" then
+                nextFocus = "series"
+            else if m.currentFocus = "playlist" then
+                nextFocus = "config"
+            end if
+        else if key = "left" then
+            if m.currentFocus = "series" then
+                nextFocus = "filmes"
+            else if m.currentFocus = "config" then
+                nextFocus = "playlist"
+            else if m.currentFocus = "filmes" then
+                nextFocus = "canais"
+            else if m.currentFocus = "playlist" then
+                nextFocus = "canais"
+            end if
+        else if key = "down" then
+            if m.currentFocus = "filmes" then
+                nextFocus = "playlist"
+            else if m.currentFocus = "series" then
+                nextFocus = "config"
+            else if m.currentFocus = "canais" then
+                nextFocus = "filmes"
+            end if
+        else if key = "up" then
+            if m.currentFocus = "playlist" then
+                nextFocus = "filmes"
+            else if m.currentFocus = "config" then
+                nextFocus = "series"
+            else if m.currentFocus = "filmes" or m.currentFocus = "series" then
+                nextFocus = "canais"
+            end if
+        end if
+        
+        if nextFocus <> invalid then
+            m.currentFocus = nextFocus
+            m.buttons[nextFocus].setFocus(true)
+            updateFocus()
+            return true
+        end if
     end if
     return false
 end function

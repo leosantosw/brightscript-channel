@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="ChannelsCategory" extends="Group">
+    <children>
+        <Rectangle
+            width="400"
+            height="100"
+            color="#025df5"
+        />
+        <Label
+            width="400"
+            height="50"
+            text="Novo Componente Renderizado!"
+            horizAlign="center"
+            vertAlign="center"
+            color="0xFFFFFF"
+        />
+    </children>
+</component>

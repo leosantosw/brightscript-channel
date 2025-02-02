@@ -1,86 +1,239 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <component name="MainScene" extends="Scene">
-    <script type="text/brightscript" uri="MainScene.brs" />
-    <script type="text/brightscript" uri="Spinner/Spinner.brs" />
-
-    <interface>
-        <field id="content" type="node" />
-    </interface>
-    <children>
-        <Overhang
-            id="overhang"
-            showOptions="false"
-            showClock="true"
-        />
-        
-        <Spinner />
-
-        <Rectangle
-            id="focusRing"
-            width="256"
-            height="86"
-            color="#025df5"
-            translation="[352, 316]"
-        />
-
-        <LayoutGroup
-            id="gridContainer"
-            layoutDirection="horiz"
-            itemSpacings="50"
-            vertAlignment="center"
-            horizAlignment="center"
+  <script type="text/brightscript" uri="MainScene.brs" />
+  <children>
+   
+    <LayoutGroup 
+        id="mainLayout"
+        horizAlignment="center" 
+        vertAlignment="center" 
+        translation="[960,540]"
+        layoutDirection="horiz"
+        itemSpacings="[40]"
+    >
+        <!-- Canais -->
+        <Group 
+            id="canaisButton"
+            focusable="true"
         >
-            <Group id="channels">
-                <Rectangle
-                    width="250"
-                    height="80"
-                    color="0xE0E0E0FF">
-                    <LayoutGroup
-                        layoutDirection="horiz"
-                        itemSpacings="10"
-                        translation="[60, 20]">
-                        <Poster
-                            id="logoCanais"
-                            uri="pkg:/images/channel.png"
-                            width="40"
-                            height="40" />
-                        <Label
-                            text="Canais"
-                            font="font:MediumBoldSystemFont"
-                            horizAlign="left"
-                            vertAlign="center"
-                            color="0x000000FF"
-                            width="150"
-                            height="40" />
-                    </LayoutGroup>
-                </Rectangle>
-            </Group>
+            <Poster 
+                id="canaisBorder"
+                uri="pkg:/images/rounded-$$RES$$.9.png"
+                width="500"
+                height="510"
+                blendColor="#0072D2"
+                opacity="0"
+            />
+            <Rectangle 
+                translation="[5,5]"
+            >
+                <Poster 
+                    uri="pkg:/images/rounded-$$RES$$.9.png" 
+                    width="490" 
+                    height="500"
+                    blendColor="#1A1D29" 
+                />
+                <Poster
+                    uri="pkg:/images/channels.png"
+                    width="170"
+                    height="170"
+                    translation="[160,140]"
+                    blendColor="#F9F9F9"
+                />
+                <Label 
+                    text="Canais" 
+                    color="#F9F9F9" 
+                    height="200" 
+                    width="490"
+                    translation="[0,280]"
+                    horizAlign="center" 
+                    vertAlign="center"
+                    font="font:LargeBoldSystemFont" 
+                />
+            </Rectangle>
+        </Group>
 
-            <Group id="playlist">
-                <Rectangle
-                    width="250"
-                    height="80"
-                    color="0xE0E0E0FF">
-                    <LayoutGroup
-                        layoutDirection="horiz"
-                        itemSpacings="10"
-                        translation="[60, 20]">
+        <!-- Grid -->
+        <LayoutGroup 
+            id="gridLayout"
+            layoutDirection="vert"
+            itemSpacings="[20]"
+        >
+            <LayoutGroup 
+                layoutDirection="horiz"
+                itemSpacings="[30]"
+            >
+                <!-- Filmes -->
+                <Group 
+                    id="filmesButton"
+                    focusable="true"
+                >
+                    <Poster 
+                        id="filmesBorder"
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="250"
+                        height="255"
+                        blendColor="#0072D2"
+                        opacity="0"
+                    />
+                    <Rectangle
+                        translation="[5,5]"
+                    >
+                        <Poster 
+                            uri="pkg:/images/rounded-$$RES$$.9.png" 
+                            width="240" 
+                            height="245"
+                            blendColor="#1A1D29" 
+                        />
                         <Poster
-                            id="logoPlaylist"
-                            uri="pkg:/images/playlist.png"
-                            width="40"
-                            height="40" />
-                        <Label
-                            text="Playlist"
-                            font="font:MediumBoldSystemFont"
-                            horizAlign="left"
+                            uri="pkg:/images/movies.png"
+                            width="90"
+                            height="90"
+                            translation="[75,50]"
+                            blendColor="#F9F9F9"
+                        />
+                        <Label 
+                            text="Filmes" 
+                            color="#F9F9F9" 
+                            height="90" 
+                            width="240"
+                            translation="[0,150]"
+                            horizAlign="center" 
                             vertAlign="center"
-                            color="0x000000FF"
-                            width="150"
-                            height="40" />
-                    </LayoutGroup>
-                </Rectangle>
-            </Group>
+                            font="font:MediumSystemFont" 
+                        />
+                    </Rectangle>
+                </Group>
+
+                <Group 
+                    id="seriesButton"
+                    focusable="true"
+                >
+                    <Poster 
+                        id="seriesBorder"
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="250"
+                        height="255"
+                        blendColor="#0072D2"
+                        opacity="0"
+                    />
+                    <Rectangle
+                        translation="[5,5]"
+                    >
+                        <Poster 
+                            uri="pkg:/images/rounded-$$RES$$.9.png" 
+                            width="240" 
+                            height="245"
+                            blendColor="#1A1D29" 
+                        />
+                        <Poster
+                            uri="pkg:/images/series.png"
+                            width="90"
+                            height="90"
+                            translation="[75,50]"
+                            blendColor="#F9F9F9"
+                        />
+                        <Label 
+                            text="Séries" 
+                            color="#F9F9F9" 
+                            height="90" 
+                            width="240"
+                            translation="[0,150]"
+                            horizAlign="center" 
+                            vertAlign="center"
+                            font="font:MediumSystemFont" 
+                        />
+                    </Rectangle>
+                </Group>
+            </LayoutGroup>
+
+            <LayoutGroup 
+                layoutDirection="horiz"
+                itemSpacings="[30]"
+            >
+                <Group 
+                    id="playlistButton"
+                    focusable="true"
+                >
+                    <Poster 
+                        id="playlistBorder"
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="250"
+                        height="255"
+                        blendColor="#0072D2"
+                        opacity="0"
+                    />
+                    <Rectangle
+                        translation="[5,5]"
+                    >
+                        <Poster 
+                            uri="pkg:/images/rounded-$$RES$$.9.png" 
+                            width="240" 
+                            height="245"
+                            blendColor="#1A1D29" 
+                        />
+                        <Poster
+                            uri="pkg:/images/playlists.png"
+                            width="90"
+                            height="90"
+                            translation="[75,50]"
+                            blendColor="#F9F9F9"
+                        />
+                        <Label 
+                            text="Playlist" 
+                            color="#F9F9F9" 
+                            height="90" 
+                            width="240"
+                            translation="[0,150]"
+                            horizAlign="center" 
+                            vertAlign="center"
+                            font="font:MediumSystemFont" 
+                        />
+                    </Rectangle>
+                </Group>
+
+                <Group 
+                    id="configButton"
+                    focusable="true"
+                >
+                    <Poster 
+                        id="configBorder"
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="250"
+                        height="255"
+                        blendColor="#0072D2"
+                        opacity="0"
+                    />
+                    <Rectangle
+                        translation="[5,5]"
+                    >
+                        <Poster 
+                            uri="pkg:/images/rounded-$$RES$$.9.png" 
+                            width="240" 
+                            height="245"
+                            blendColor="#1A1D29" 
+                        />
+                        <Poster
+                            uri="pkg:/images/settings.png"
+                            width="90"
+                            height="90"
+                            translation="[75,50]"
+                            blendColor="#F9F9F9"
+                        />
+                        <Label 
+                            text="Ajustes" 
+                            color="#F9F9F9" 
+                            height="90" 
+                            width="240"
+                            translation="[0,150]"
+                            horizAlign="center" 
+                            vertAlign="center"
+                            font="font:MediumSystemFont" 
+                        />
+                    </Rectangle>
+                </Group>
+            </LayoutGroup>
         </LayoutGroup>
-    </children>
+    </LayoutGroup>
+  </children>
 </component>

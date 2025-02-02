@@ -1,16 +1,10 @@
-# Channel details
-title=IPTV Channel
+# Channel Details
+title=Sample Channel One
+subtitle=A simple sample channel
 major_version=1
 minor_version=0
 build_version=0
-
-# Channel Assets
-mm_icon_focus_sd=pkg:/images/channel-poster.jpg
-mm_icon_focus_hd=pkg:/images/channel-poster.jpg
-mm_icon_focus_fhd=pkg:/images/channel-poster.jpg
-
-# Splash Screen + Loading Screen Artwork
+splash_color=#808080
 splash_min_time=0
-
-# Resolution
-ui_resolutions=hd
+ui_resolutions=fhd
+uri_resolution_autosub=$$RES$$,SD,HD,FHD
