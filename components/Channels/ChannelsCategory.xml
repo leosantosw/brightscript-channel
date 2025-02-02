@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="ChannelsCategory" extends="Group">
+    <script type="text/brightscript" uri="ChannelsCategory.brs" />
+    <children>
+        <!-- Fundo da tela -->
+        <Rectangle
+            width="1920"
+            height="1080"
+            color="#0E1420"
+        />
+
+        <!-- Container principal -->
+        <LayoutGroup 
+            translation="[100,100]"
+            itemSpacings="[40]"
+        >
+            <!-- Título da lista -->
+            <Label
+                text="Channel Categories"
+                font="font:LargeBoldSystemFont"
+                color="#F9F9F9"
+            />
+
+            <LabelList
+                id="categoriesList"
+                itemSize="[440,100]"
+                focusedColor="#0072D2"
+                unfocusedColor="#0f3657"
+                textColor="#F9F9F9"
+                focusedTextColor="#FFFFFF"
+                wrap="false"
+            >
+                <ContentNode role="content">
+                    <ContentNode title="Drama" />
+                    <ContentNode title="Action" />
+                    <ContentNode title="Horror" />
+                    <ContentNode title="Comedy" />
+                </ContentNode>
+            </LabelList>
+
+        </LayoutGroup>
+    </children>
+</component>

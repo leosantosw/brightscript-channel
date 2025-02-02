@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component name="MainScene" extends="Scene">
     <script type="text/brightscript" uri="MainScene.brs" />
-    <script type="text/brightscript" uri="UI/ScreenStack.brs" />
-    <script type="text/brightscript" uri="UI/GridScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/components/UI/ScreenStack.brs" />
+    <script type="text/brightscript" uri="pkg:/components/UI/HomeScreen.brs" />
     <children>
-        <CustomHeader
-            id="header"
-            translation="[0,0]"
-        />
+        <CustomHeader />
 
         <Spinner />
     </children>
