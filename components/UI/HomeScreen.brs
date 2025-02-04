@@ -13,6 +13,12 @@ sub onCategorySelected()
 
     if m.homeScreen.categorySelected = "playlist"
         playlist = CreateObject("roSGNode", "PlaylistScreen")
+        playlist.ObserveField("playlistSaved", "onPlaylistSaved")
         ShowScreen(playlist)
     end if
+end sub
+
+sub onPlaylistSaved()
+    CloseScreen(invalid)
+    ShowHomeScreen()
 end sub
