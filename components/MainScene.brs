@@ -2,6 +2,7 @@ function init()
     m.top.backgroundUri = ""
     m.top.backgroundColor = "#0E1420"
     
+    m.loadingIndicator = m.top.findNode("spinner") 
     InitScreenStack()
     ShowHomeScreen()
 end function

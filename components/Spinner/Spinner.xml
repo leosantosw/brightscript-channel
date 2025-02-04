@@ -3,9 +3,9 @@
     <script type="text/brightscript" uri="Spinner.brs" />
     <children>
         <BusySpinner
-            id="exampleBusySpinner"
+            id="spinner"
             spinInterval="1"
-            visible="true"
+            visible="false"
         />
     </children>
 </component>

@@ -1,1 +1,5 @@
-out
+# Environment
+source/utils/env.brs
+
+# Roku files
+out/*

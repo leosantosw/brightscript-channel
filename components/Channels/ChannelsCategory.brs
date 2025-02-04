@@ -1,6 +1,8 @@
 function init()
     m.categoriesList = m.top.findNode("categoriesList")
     m.categoriesList.setFocus(true)
+
+    loadSavedPlaylist()
 end function
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
@@ -15,3 +17,15 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     end if
     return true
 end function 
+
+function loadSavedPlaylist() as Object
+    reg = CreateObject("roRegistrySection", "SavedPlaylist")
+    savedData = reg.Read("playlist")
+    print "Received data: "; savedData
+    
+    if savedData <> invalid and savedData <> ""
+        return ParseJson(savedData) ' Converte JSON para objeto
+    end if
+
+    return invalid
+end function

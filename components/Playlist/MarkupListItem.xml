@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="MarkupListItem" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="showContent" />
+        <field id="focusPercent" type="float" onChange="onFocusPercentChange" />
+        <field id="isFocused" type="boolean" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/Playlist/MarkupListItem.brs" />
+    <children>
+        <Rectangle>
+            <Poster 
+                uri="pkg:/images/rounded-$$RES$$.9.png" 
+                width="586" 
+                height="80"
+                id="background"
+                blendColor="#1A1D29"
+            />
+            <Poster 
+                uri="pkg:/images/rounded-$$RES$$.9.png" 
+                width="586" 
+                height="80"
+                id="focusBorder"
+                blendColor="#0072D2"
+                opacity="0"
+            />
+            <Label 
+                id="title" 
+                color="#F9F9F9" 
+                height="80" 
+                width="600"
+                translation="[20,0]"
+                vertAlign="center"
+                font="font:MediumSystemFont"
+            />
+        </Rectangle>
+    </children>
+</component> 

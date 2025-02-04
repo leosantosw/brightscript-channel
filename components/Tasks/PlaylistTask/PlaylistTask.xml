@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="GetPlaylistsTask" extends="Task">
+    <interface>
+        <field id="playlists" type="array" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/source/utils/env.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Tasks/PlaylistTask/PlaylistTask.brs" />
+</component> 

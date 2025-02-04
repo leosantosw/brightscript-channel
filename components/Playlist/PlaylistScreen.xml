@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="PlaylistScreen" extends="Group">
+    <script type="text/brightscript" uri="pkg:/source/utils/env.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Playlist/PlaylistScreen.brs" />
+    <children>
+        <LayoutGroup 
+            translation="[960,240]"
+            itemSpacings="[40]"
+            horizAlignment="center"
+        >
+            <Group
+                width="900"
+            >
+                <Label
+                    text="Minhas Playlists"
+                    font="font:LargeBoldSystemFont"
+                    color="#F9F9F9"
+                    width="900"
+                    horizAlign="center"
+                />
+                <Group
+                    id="refreshButton"
+                    translation="[830,0]"
+                    focusable="true"
+                >
+                    <Poster 
+                        id="refreshIcon"
+                        uri="pkg:/images/rounded-$$RES$$.9.png" 
+                        width="70" 
+                        height="70"
+                    />
+                    <Poster
+                        uri="pkg:/images/refresh.png"
+                        width="90"
+                        height="90"
+                        translation="[-10,-10]"
+                    />
+                </Group>
+            </Group>
+
+            <MarkupList
+                id="playlistList"
+                itemComponentName="MarkupListItem" 
+                itemSize="[586, 100]" 
+                drawFocusFeedback="false" 
+                vertFocusAnimationStyle="floatingFocus" 
+            >
+            </MarkupList>
+        </LayoutGroup>
+    </children>
+</component> 

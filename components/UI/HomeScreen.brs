@@ -10,4 +10,9 @@ sub onCategorySelected()
         category = CreateObject("roSGNode", "ChannelsCategory")
         ShowScreen(category)
     end if
+
+    if m.homeScreen.categorySelected = "playlist"
+        playlist = CreateObject("roSGNode", "PlaylistScreen")
+        ShowScreen(playlist)
+    end if
 end sub
