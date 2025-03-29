@@ -5,14 +5,14 @@ function init()
     m.buttons.series = m.top.findNode("seriesButton")
     m.buttons.playlist = m.top.findNode("playlistButton")
     m.buttons.settings = m.top.findNode("settingsButton")
-    
+
     m.borders = CreateObject("roAssociativeArray")
     m.borders.channels = m.top.findNode("channelsBorder")
     m.borders.movies = m.top.findNode("moviesBorder")
     m.borders.series = m.top.findNode("seriesBorder")
     m.borders.playlist = m.top.findNode("playlistBorder")
     m.borders.settings = m.top.findNode("settingsBorder")
-    
+
     m.buttons.channels.setFocus(true)
     m.currentFocus = "channels"
     updateFocus()
@@ -25,7 +25,7 @@ sub updateFocus()
     m.borders[m.currentFocus].opacity = 1
 end sub
 
-function onKeyEvent(key as String, press as Boolean) as Boolean
+function onKeyEvent(key as string, press as boolean) as boolean
     if press then
         nextFocus = invalid
 
@@ -33,7 +33,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             ClickButton(m.currentFocus)
             return true
         end if
-        
+
         if key = "right" then
             if m.currentFocus = "channels" then
                 nextFocus = "movies"
@@ -69,7 +69,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
                 nextFocus = "channels"
             end if
         end if
-        
+
         if nextFocus <> invalid then
             m.currentFocus = nextFocus
             m.buttons[nextFocus].setFocus(true)
@@ -80,7 +80,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     return false
 end function
 
-function ClickButton(buttonText as String)
+function ClickButton(buttonText as string)
     print "ClickButton: "; buttonText
     m.top.categorySelected = buttonText
 end function

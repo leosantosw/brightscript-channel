@@ -9,20 +9,20 @@
         id="mainLayout"
         horizAlignment="center" 
         vertAlignment="center" 
-        translation="[960,540]"
+        translation="[640,350]"
         layoutDirection="horiz"
-        itemSpacings="[40]"
+        itemSpacings="[30]"
     >
-        <!-- Channels -->
         <Group 
             id="channelsButton"
             focusable="true"
+            translation="[0,0]"
         >
             <Poster 
                 id="channelsBorder"
                 uri="pkg:/images/rounded-$$RES$$.9.png"
-                width="500"
-                height="510"
+                width="300"
+                height="300"
                 blendColor="#0072D2"
                 opacity="0"
             />
@@ -31,25 +31,25 @@
             >
                 <Poster 
                     uri="pkg:/images/rounded-$$RES$$.9.png" 
-                    width="490" 
-                    height="500"
+                    width="290" 
+                    height="290"
                     blendColor="#1A1D29" 
                 />
                 <Poster
                     uri="pkg:/images/channels.png"
-                    width="170"
-                    height="170"
-                    translation="[160,140]"
+                    width="80"
+                    height="80"
+                    translation="[105,70]"
                     blendColor="#F9F9F9"
                 />
                 <Label 
-                    text="Channels" 
+                    text="Canais" 
                     color="#F9F9F9" 
-                    height="200" 
-                    width="490"
-                    translation="[0,280]"
+                    height="60" 
+                    width="290"
+                    translation="[0,170]"
                     horizAlign="center" 
-                    vertAlign="center"
+                    vertAlign="top"
                     font="font:LargeBoldSystemFont" 
                 />
             </Rectangle>
@@ -59,11 +59,11 @@
         <LayoutGroup 
             id="gridLayout"
             layoutDirection="vert"
-            itemSpacings="[20]"
+            itemSpacings="[10]"
         >
             <LayoutGroup 
                 layoutDirection="horiz"
-                itemSpacings="[30]"
+                itemSpacings="[20]"
             >
                 <!-- Movies -->
                 <Group 
@@ -73,33 +73,33 @@
                     <Poster 
                         id="moviesBorder"
                         uri="pkg:/images/rounded-$$RES$$.9.png"
-                        width="250"
-                        height="255"
+                        width="200"
+                        height="204"
                         blendColor="#0072D2"
                         opacity="0"
                     />
                     <Rectangle
-                        translation="[5,5]"
+                        translation="[4,4]" 
                     >
                         <Poster 
                             uri="pkg:/images/rounded-$$RES$$.9.png" 
-                            width="240" 
-                            height="245"
+                            width="192" 
+                            height="196" 
                             blendColor="#1A1D29" 
                         />
                         <Poster
                             uri="pkg:/images/movies.png"
-                            width="90"
-                            height="90"
-                            translation="[75,50]"
+                            width="72" 
+                            height="72" 
+                            translation="[60,40]"
                             blendColor="#F9F9F9"
                         />
                         <Label 
-                            text="Movies" 
+                            text="Filmes" 
                             color="#F9F9F9" 
-                            height="90" 
-                            width="240"
-                            translation="[0,150]"
+                            height="72" 
+                            width="192" 
+                            translation="[0,120]" 
                             horizAlign="center" 
                             vertAlign="center"
                             font="font:MediumSystemFont" 
@@ -115,33 +115,33 @@
                     <Poster 
                         id="seriesBorder"
                         uri="pkg:/images/rounded-$$RES$$.9.png"
-                        width="250"
-                        height="255"
+                        width="200"
+                        height="204"
                         blendColor="#0072D2"
                         opacity="0"
                     />
                     <Rectangle
-                        translation="[5,5]"
+                        translation="[4,4]"
                     >
                         <Poster 
                             uri="pkg:/images/rounded-$$RES$$.9.png" 
-                            width="240" 
-                            height="245"
+                            width="192" 
+                            height="196"
                             blendColor="#1A1D29" 
                         />
                         <Poster
                             uri="pkg:/images/series.png"
-                            width="90"
-                            height="90"
-                            translation="[75,50]"
+                            width="72"
+                            height="72"
+                            translation="[60,40]"
                             blendColor="#F9F9F9"
                         />
                         <Label 
-                            text="Series" 
+                            text="Séries" 
                             color="#F9F9F9" 
-                            height="90" 
-                            width="240"
-                            translation="[0,150]"
+                            height="72" 
+                            width="192"
+                            translation="[0,120]"
                             horizAlign="center" 
                             vertAlign="center"
                             font="font:MediumSystemFont" 
@@ -152,7 +152,7 @@
 
             <LayoutGroup 
                 layoutDirection="horiz"
-                itemSpacings="[30]"
+                itemSpacings="[20]"
             >
                 <Group 
                     id="playlistButton"
@@ -161,33 +161,33 @@
                     <Poster 
                         id="playlistBorder"
                         uri="pkg:/images/rounded-$$RES$$.9.png"
-                        width="250"
-                        height="255"
+                        width="200"
+                        height="204"
                         blendColor="#0072D2"
                         opacity="0"
                     />
                     <Rectangle
-                        translation="[5,5]"
+                        translation="[4,4]"
                     >
                         <Poster 
                             uri="pkg:/images/rounded-$$RES$$.9.png" 
-                            width="240" 
-                            height="245"
+                            width="192" 
+                            height="196"
                             blendColor="#1A1D29" 
                         />
                         <Poster
                             uri="pkg:/images/playlists.png"
-                            width="90"
-                            height="90"
-                            translation="[75,50]"
+                            width="72"
+                            height="72"
+                            translation="[60,40]"
                             blendColor="#F9F9F9"
                         />
                         <Label 
-                            text="Playlist" 
+                            text="Listas" 
                             color="#F9F9F9" 
-                            height="90" 
-                            width="240"
-                            translation="[0,150]"
+                            height="72" 
+                            width="192"
+                            translation="[0,120]"
                             horizAlign="center" 
                             vertAlign="center"
                             font="font:MediumSystemFont" 
@@ -203,33 +203,33 @@
                     <Poster 
                         id="settingsBorder"
                         uri="pkg:/images/rounded-$$RES$$.9.png"
-                        width="250"
-                        height="255"
+                        width="200"
+                        height="204"
                         blendColor="#0072D2"
                         opacity="0"
                     />
                     <Rectangle
-                        translation="[5,5]"
+                        translation="[4,4]"
                     >
                         <Poster 
                             uri="pkg:/images/rounded-$$RES$$.9.png" 
-                            width="240" 
-                            height="245"
+                            width="192" 
+                            height="196"
                             blendColor="#1A1D29" 
                         />
                         <Poster
                             uri="pkg:/images/settings.png"
-                            width="90"
-                            height="90"
-                            translation="[75,50]"
+                            width="72"
+                            height="72"
+                            translation="[60,40]"
                             blendColor="#F9F9F9"
                         />
                         <Label 
-                            text="Settings" 
+                            text="Ajustes" 
                             color="#F9F9F9" 
-                            height="90" 
-                            width="240"
-                            translation="[0,150]"
+                            height="72" 
+                            width="192"
+                            translation="[0,120]"
                             horizAlign="center" 
                             vertAlign="center"
                             font="font:MediumSystemFont" 

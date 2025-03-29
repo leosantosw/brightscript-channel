@@ -1,9 +1,9 @@
 function init()
     m.clock = m.top.findNode("clock")
     m.timer = createObject("roTimespan")
-    
+
     updateClock()
-    
+
     m.clockTimer = createObject("roSGNode", "Timer")
     m.clockTimer.repeat = true
     m.clockTimer.duration = 1
@@ -18,4 +18,4 @@ sub updateClock()
     minutes = date.getMinutes().toStr()
     if minutes.len() = 1 then minutes = "0" + minutes
     m.clock.text = hours + ":" + minutes
-end sub 
+end sub

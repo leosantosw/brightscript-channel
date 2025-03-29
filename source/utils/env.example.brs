@@ -1,5 +1,5 @@
 ' EXAMPLE CONFIG:
-' function GetSupabaseConfig() as Object
+' function GetEnvConfig() as Object
 '     return {
 '         API_URL: "your_supabase_url",
 '         API_KEY: "your_api_key",

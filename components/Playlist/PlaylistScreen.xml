@@ -6,22 +6,7 @@
     <script type="text/brightscript" uri="pkg:/source/utils/env.brs" />
     <script type="text/brightscript" uri="pkg:/components/Playlist/PlaylistScreen.brs" />
     <children>
-        <LayoutGroup 
-            translation="[960,240]"
-            itemSpacings="[40]"
-            horizAlignment="center"
-        >
-            <Group
-                width="900"
-            >
-                <Label
-                    text="Minhas Playlists"
-                    font="font:LargeBoldSystemFont"
-                    color="#F9F9F9"
-                    width="900"
-                    horizAlign="center"
-                />
-                <Group
+                <!-- <Group
                     id="refreshButton"
                     translation="[830,0]"
                     focusable="true"
@@ -38,17 +23,31 @@
                         height="90"
                         translation="[-10,-10]"
                     />
-                </Group>
+                </Group> -->
+            
+        <LayoutGroup 
+            translation="[648, 140]"
+            itemSpacings="[40]"
+            horizAlignment="center"
+        >
+            <Group>
+                <Label
+                    text="Minhas Playlists"
+                    font="font:LargeBoldSystemFont"
+                    color="#c8cfe3"
+                    horizAlign="center"
+                />
             </Group>
 
             <MarkupList
-                id="playlistList"
-                itemComponentName="MarkupListItem" 
-                itemSize="[800, 100]" 
-                drawFocusFeedback="false" 
-                vertFocusAnimationStyle="floatingFocus" 
-            >
-            </MarkupList>
+                id="playlistId"
+                itemComponentName="Item"
+                itemSize="[648, 80]"
+                itemSpacing="[0, 12]"
+                drawFocusFeedback="false"
+                vertFocusAnimationStyle = "floatingFocus"
+                numRows="10"
+            />
         </LayoutGroup>
     </children>
 </component> 

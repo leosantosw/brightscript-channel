@@ -1,30 +1,23 @@
 sub init()
-    m.title = m.top.findNode("title")
-    m.focusBorder = m.top.findNode("focusBorder")
-    m.trashButton = m.top.findNode("trashButton")
-    m.trashIcon = m.top.findNode("trashIcon")
+    m.focusBg = m.top.findNode("focusBg")
+    m.background = m.top.findNode("background")
+    m.ItemBorder = m.top.findNode("item-border")
+    m.playlistTitle = m.top.findNode("playlistTitle")
 end sub
 
 sub showContent()
     content = m.top.itemContent
-    m.title.text = content.title
+    m.playlistTitle.text = content.title
 end sub
 
-sub onFocusPercentChange()
-    focusPercent = m.top.focusPercent
-    m.focusBorder.opacity = focusPercent * 0.3
-end sub
-
-function onKeyEvent(key as String, press as Boolean) as Boolean
-    if press then
-        print "Key pressed: "; key
-        if key = "back"
-            return false
-        else if key = "right" 
-            m.trashButton.setFocus(true)
-            m.trashIcon.blendColor = "#0072D2"
-            return true
-        end if
+sub showfocus(event)
+    if m.top.focusPercent then
+        m.focusBg.visible = true
+        m.ItemBorder.visible = true
+        m.playlistTitle.color = "#e9ebf0"
+    else
+        m.focusBg.visible = false
+        m.ItemBorder.visible = false
+        m.playlistTitle.color = "#e9ebf0"
     end if
-    return true
-end function
+end sub

@@ -5,8 +5,7 @@
     <script type="text/brightscript" uri="pkg:/components/UI/ScreenStack.brs" />
     <script type="text/brightscript" uri="pkg:/components/UI/HomeScreen.brs" />
     <children>
-        <CustomHeader />
-
+        <CustomHeader />    
         <Spinner />
     </children>
 </component>

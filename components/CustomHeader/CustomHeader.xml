@@ -2,36 +2,32 @@
 <component name="CustomHeader" extends="Group">
   <script type="text/brightscript" uri="CustomHeader.brs" />
   <children>
-    <Poster
-        id="logo"
-        uri="pkg:/images/logo.png"
-        width="90"
-        height="90"
-        translation="[100,15]"
-    />
-    
-    <Group
-        id="clockContainer"
-        translation="[1820,0]"
-    >
-        <Label
-            id="clock"
-            text=""
-            font="font:MediumSystemFont"
-            color="#F9F9F9"
-            width="100"
-            height="30"
-            translation="[-100,45]"
-            horizAlign="right"
-        />
+    <Group>
+      <Poster
+          id="logo"
+          uri="pkg:/images/logo.png"
+          width="60"
+          height="60"
+          translation="[40,15]"
+      />
+
+      <Label
+          id="clock"
+          font="font:MediumSystemFont"
+          color="#F9F9F9"
+          width="100"
+          height="30"
+          translation="[1100,35]"
+          horizAlign="right"
+      />
+      
+      <Rectangle
+          id="bottomBorder"
+          height="2"
+          width="1280"
+          color="#0f3657"
+          translation="[0,90]"
+      />
     </Group>
-    
-    <Rectangle
-        id="bottomBorder"
-        width="1920"
-        height="2"
-        translation="[0,120]"
-        color="#0f3657"
-    />
   </children>
-</component> 
+</component>
