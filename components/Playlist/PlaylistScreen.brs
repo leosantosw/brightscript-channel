@@ -1,6 +1,7 @@
 function init()
     m.spinner = m.top.getScene().findNode("spinner")
     m.playlistId = m.top.findNode("playlistId")
+    m.playlistId.observeField("itemSelected", "OnItemSelected")
     m.playlistId.setFocus(true)
     loadContent()
 end function
@@ -28,27 +29,26 @@ sub OnMainContentLoaded()
     end if
 end sub
 
-function onKeyEvent(key as string, press as boolean) as boolean
-    if press then
-        if key = "back"
-            return false
-        end if
-    end if
-    ' else if key = "OK"
-    ' if m.refreshButton.hasFocus()
-    '     loadContent()
-    '     return true
-    ' else if m.playlistList.hasFocus()
-    '     playlist = m.playlistList.content.getChild(m.playlistList.itemSelected)
-    '     playlistData = playlist.description
-    '     savePlaylist(playlistData)
-    '     m.top.playlistSaved = true
-    '     return true
-    return true
-end function
+sub OnItemSelected()
+    m.selectedTitle = m.playlistId.content.getChild(m.playlistId.itemSelected)
+    m.playlistDialog = CreateObject("roSGNode", "PlaylistDialog")
+    m.top.AppendChild(m.playlistDialog)
+    m.playlistDialog.SetFocus(true)
+    m.playlistDialog.observeField("dialogOption", "onDialogOptionSelected")
+end sub
 
-' sub savePlaylist(data as string)
-'     reg = CreateObject("roRegistrySection", "SavedPlaylist")
-'     reg.Write("playlist", data)
-'     reg.Flush()
-' end sub
+sub onDialogOptionSelected()
+    if m.playlistDialog.dialogOption then
+        savePlaylist(m.selectedTitle.description)
+    end if
+
+    m.top.RemoveChild(m.playlistDialog)
+    m.playlistId.setFocus(true)
+end sub
+
+sub savePlaylist(data as string)
+    reg = CreateObject("roRegistrySection", "SavedPlaylist")
+    reg.Write("playlist", data)
+    reg.Flush()
+    m.top.playlistSaved = true
+end sub

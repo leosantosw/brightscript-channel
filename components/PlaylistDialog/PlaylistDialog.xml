@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="PlaylistDialog" extends="Group">
+    <interface>
+        <field id="dialogOption" type="boolean" alwaysNotify="true" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/PlaylistDialog/PlaylistDialog.brs" />
+    <children>
+        <LayoutGroup 
+                translation="[648, 210]"
+                itemSpacings="[40]"
+                horizAlignment="center"
+            >
+            <Group>
+                <Poster 
+                    uri="pkg:/images/rounded-$$RES$$.9.png" 
+                    width="648" 
+                    height="250"
+                    blendColor="#3d466b"
+                />
+                <Poster 
+                    uri="pkg:/images/rounded-$$RES$$.9.png" 
+                    width="640" 
+                    height="242"
+                    blendColor="#1A1D29"
+                    translation="[4,4]"
+                />
+                <Label
+                    text="Selecione"
+                    font="font:LargeBoldSystemFont"
+                    color="#c8cfe3"
+                    horizAlign="center"
+                    width="644"
+                    translation="[0, 60]" 
+                />
+
+                <Group translation="[100, 160]" id="backBtn">
+                    <Poster
+                        id="border-back-back"
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="200"
+                        height="50"
+                        blendColor="#c8cfe3"
+                        visible="true"
+                    />
+                    <Poster
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="196"
+                        height="46"
+                        blendColor="#1A1D29"
+                        translation="[2,2]"
+                    />
+                    <Label
+                        text="Voltar"
+                        font="font:SmallBoldSystemFont"
+                        color="#FFFFFF"
+                        horizAlign="center"
+                        vertAlign="center"
+                        width="200"
+                        height="50"
+                    />
+                </Group>
+
+                <Group translation="[348, 160]">
+                    <Poster
+                        id="border-use-back"
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="200"
+                        height="50"
+                        blendColor="#c8cfe3"
+                        visible="false"
+                    />
+                    
+                    <Poster
+                        uri="pkg:/images/rounded-$$RES$$.9.png"
+                        width="196"
+                        height="46"
+                        blendColor="#0072D2"
+                        translation="[2,2]"
+                    />
+                    <Label
+                        text="Usar Lista"
+                        font="font:SmallBoldSystemFont"
+                        color="#FFFFFF"
+                        horizAlign="center"
+                        vertAlign="center"
+                        width="200"
+                        height="50"
+                    />
+                </Group>
+            </Group>
+        </LayoutGroup>
+    </children>
+</component>

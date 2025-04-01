@@ -3,11 +3,12 @@ sub ShowHomeScreen()
     m.HomeScreen.observeField("categorySelected", "onCategorySelected")
     m.top.appendChild(m.HomeScreen)
     ShowScreen(m.HomeScreen)
+end sub
 
-    ' show playlist screen
-    ' playlist = CreateObject("roSGNode", "PlaylistScreen")
-    ' playlist.ObserveField("playlistSaved", "onPlaylistSaved")
-    ' ShowScreen(playlist)
+sub ShowPlaylistScreen()
+    playlist = CreateObject("roSGNode", "PlaylistScreen")
+    playlist.ObserveField("playlistSaved", "onPlaylistSaved")
+    ShowScreen(playlist)
 end sub
 
 sub onCategorySelected()
@@ -17,11 +18,10 @@ sub onCategorySelected()
     end if
 
     if m.homeScreen.categorySelected = "playlist"
-        playlist = CreateObject("roSGNode", "PlaylistScreen")
-        playlist.ObserveField("playlistSaved", "onPlaylistSaved")
-        ShowScreen(playlist)
+        ShowPlaylistScreen()
     end if
 end sub
+
 
 sub onPlaylistSaved()
     CloseScreen(invalid)
