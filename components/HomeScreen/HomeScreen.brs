@@ -81,6 +81,5 @@ function onKeyEvent(key as string, press as boolean) as boolean
 end function
 
 function ClickButton(buttonText as string)
-    print "ClickButton: "; buttonText
     m.top.categorySelected = buttonText
 end function

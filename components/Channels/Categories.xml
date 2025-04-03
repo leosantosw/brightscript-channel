@@ -1,0 +1,45 @@
+<component name="ChannelsCategories" extends="Group">
+    <script type="text/brightscript" uri="Categories.brs" />
+    <children>
+        <Label
+            id="categoriesLabel"
+            text="Categorias"
+            font="font:MediumBoldSystemFont"
+            color="#F9F9F9"
+            horizAlign="center"
+            width="185"
+            translation="[0,110]"
+        />
+        <Label
+            id="subcategoriesLabel"
+            text="Canais"
+            font="font:MediumBoldSystemFont"
+            color="#F9F9F9"
+            horizAlign="center"
+            width="302"
+            translation="[260,110]"
+            visible="false"
+        />
+        
+        <LayoutGroup 
+            translation="[0,140]"
+            horizAlignment="left"
+            layoutDirection="horiz"
+        >
+            <MarkupList
+                id="categoriesList"
+                itemComponentName="GradientRectangle"
+                itemSize="[302, 62]"
+                itemSpacing="[0, 6]"
+                drawFocusFeedback="false"
+            />
+            <MarkupList
+                id="subcategoriesList"
+                itemComponentName="GradientRectangle"
+                itemSize="[302, 62]"
+                itemSpacing="[0, 6]"
+                drawFocusFeedback="false"
+            />
+        </LayoutGroup>
+    </children>
+</component>

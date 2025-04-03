@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="GradientRectangle" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="updateTitle"/>
+        <field id="focusPercent" type="float" onChange="showfocus" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/GradientRectangle/GradientRectangle.brs"/>
+    <children>
+        <Poster 
+            id="border"
+            uri="pkg:/images/rounded-$$RES$$.9.png" 
+            width="302" 
+            height="62"
+            blendColor="#315ea3"
+            translation="[0,0]"
+            visible="false"
+        />
+
+        <Poster 
+            id="background"
+            uri="pkg:/images/rounded-$$RES$$.9.png" 
+            width="300" 
+            height="60"
+            blendColor="#08111f"
+            translation="[1,1]"
+        />
+
+        <Label 
+            id="labelText"
+            width="270"
+            height="60"
+            translation="[18,3]"
+            vertAlign="center"
+            color="#ffffff"
+        />
+    </children>
+</component>

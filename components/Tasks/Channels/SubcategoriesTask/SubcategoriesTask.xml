@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SubcategoriesTask" extends="Task">
+    <interface>
+        <field id="categoryId" type="string" />
+        <field id="subcategories" type="array" />
+        <field id="message" type="string" />
+    </interface>
+    
+    <script type="text/brightscript" uri="pkg:/components/Tasks/utils/LoadSavedPlaylist.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Tasks/Channels/SubcategoriesTask/SubcategoriesTask.brs" />
+</component>

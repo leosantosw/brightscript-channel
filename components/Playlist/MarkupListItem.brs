@@ -10,7 +10,7 @@ sub showContent()
     m.playlistTitle.text = content.title
 end sub
 
-sub showfocus(event)
+sub showfocus()
     if m.top.focusPercent then
         m.focusBg.visible = true
         m.ItemBorder.visible = true

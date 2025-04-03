@@ -1,19 +1,21 @@
 sub ShowHomeScreen()
     m.HomeScreen = CreateObject("roSGNode", "HomeScreen")
     m.HomeScreen.observeField("categorySelected", "onCategorySelected")
-    m.top.appendChild(m.HomeScreen)
     ShowScreen(m.HomeScreen)
+
+    ' category = CreateObject("roSGNode", "ChannelsCategories")
+    ' ShowScreen(category)
 end sub
 
 sub ShowPlaylistScreen()
-    playlist = CreateObject("roSGNode", "PlaylistScreen")
-    playlist.ObserveField("playlistSaved", "onPlaylistSaved")
-    ShowScreen(playlist)
+    m.Playlist = CreateObject("roSGNode", "PlaylistScreen")
+    m.playlist.ObserveField("navigateToHome", "onNavigateToHome")
+    ShowScreen(m.Playlist)
 end sub
 
 sub onCategorySelected()
     if m.homeScreen.categorySelected = "channels"
-        category = CreateObject("roSGNode", "ChannelsCategory")
+        category = CreateObject("roSGNode", "ChannelsCategories")
         ShowScreen(category)
     end if
 
@@ -22,8 +24,6 @@ sub onCategorySelected()
     end if
 end sub
 
-
-sub onPlaylistSaved()
+sub onNavigateToHome()
     CloseScreen(invalid)
-    ShowHomeScreen()
 end sub

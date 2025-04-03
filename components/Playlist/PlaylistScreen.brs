@@ -7,10 +7,10 @@ function init()
 end function
 
 sub loadContent()
+    m.spinner.visible = true
     m.contentTask = CreateObject("roSGNode", "GetPlaylistsTask")
     m.contentTask.ObserveField("playlists", "OnMainContentLoaded")
     m.contentTask.control = "run"
-    m.spinner.visible = true
 end sub
 
 sub OnMainContentLoaded()
@@ -40,6 +40,7 @@ end sub
 sub onDialogOptionSelected()
     if m.playlistDialog.dialogOption then
         savePlaylist(m.selectedTitle.description)
+        m.top.navigateToHome = true
     end if
 
     m.top.RemoveChild(m.playlistDialog)
@@ -50,5 +51,4 @@ sub savePlaylist(data as string)
     reg = CreateObject("roRegistrySection", "SavedPlaylist")
     reg.Write("playlist", data)
     reg.Flush()
-    m.top.playlistSaved = true
 end sub

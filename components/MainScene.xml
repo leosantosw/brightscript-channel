@@ -5,7 +5,9 @@
     <script type="text/brightscript" uri="pkg:/components/UI/ScreenStack.brs" />
     <script type="text/brightscript" uri="pkg:/components/UI/HomeScreen.brs" />
     <children>
-        <CustomHeader />    
+        <CustomHeader />  
         <Spinner />
+        
+        <!-- <Gradient id="gradient1" title="teste" translation="[10,120]" /> -->
     </children>
 </component>

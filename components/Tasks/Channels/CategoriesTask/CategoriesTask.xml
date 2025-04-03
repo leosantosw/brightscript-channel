@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="ChannelsCategoriesTask" extends="Task">
+    <interface>
+        <field id="categories" type="array" />
+        <field id="message" type="string" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/Tasks/utils/LoadSavedPlaylist.brs" />
+    <script type="text/brightscript" uri="pkg:/components/Tasks/Channels/CategoriesTask/CategoriesTask.brs" />
+</component>
