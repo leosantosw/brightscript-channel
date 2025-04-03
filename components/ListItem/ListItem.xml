@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component name="GradientRectangle" extends="Group">
+<component name="ListItem" extends="Group">
     <interface>
         <field id="itemContent" type="node" onChange="updateTitle"/>
         <field id="focusPercent" type="float" onChange="showfocus" />
     </interface>
-    <script type="text/brightscript" uri="pkg:/components/GradientRectangle/GradientRectangle.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/ListItem/ListItem.brs"/>
     <children>
         <Poster 
             id="border"

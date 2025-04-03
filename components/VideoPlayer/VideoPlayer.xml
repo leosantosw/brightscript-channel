@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="VideoPlayer" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/VideoPlayer/VideoPlayer.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/Tasks/utils/LoadSavedPlaylist.brs"/>
+    
+    <interface>
+        <field id="content" type="node" onChange="onContentSet"/>
+    </interface>
+    
+    <children>
+        <Video 
+            id="videoPlayer" 
+            width="1280" 
+            height="720" 
+            translation="[0, 0]"
+        />
+    </children>
+</component>

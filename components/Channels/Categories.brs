@@ -2,11 +2,11 @@ function init()
     m.spinner = m.top.getScene().findNode("spinner")
 
     m.categoriesList = m.top.findNode("categoriesList")
-    m.categoriesList.observeField("itemSelected", "OnItemSelected")
+    m.categoriesList.observeField("itemSelected", "OnCategorySelected")
     m.categoriesList.setFocus(true)
 
     m.subcategoriesList = m.top.findNode("subcategoriesList")
-    m.subcategoriesList.visible = false
+    m.subcategoriesList.observeField("itemSelected", "OnSubcategorySelected")
 
     m.categoriesLabel = m.top.findNode("categoriesLabel")
     m.subcategoriesLabel = m.top.findNode("subcategoriesLabel")
@@ -43,18 +43,20 @@ sub OnShowMessageInfo()
     m.categoriesLabel.width = "1280"
 end sub
 
-sub OnItemSelected()
+sub OnCategorySelected()
     index = m.categoriesList.itemSelected
-    if index >= 0 and index < m.categoriesList.content.getChildCount() then
-        selectedItem = m.categoriesList.content.getChild(index)
-        categoryData = ParseJson(selectedItem.description)
+    selectedItem = m.categoriesList.content.getChild(index)
+    categoryData = ParseJson(selectedItem.description)
+    loadSubcategories(categoryData.category_id)
+end sub
 
-        if categoryData <> invalid and categoryData.category_id <> invalid then
-            loadSubcategories(categoryData.category_id)
-        else
-            print "Dados da categoria inválidos"
-        end if
-    end if
+sub OnSubcategorySelected()
+    index = m.subcategoriesList.itemSelected
+    subcategory = m.subcategoriesList.content.getChild(index)
+    videoPlayer = createObject("RoSGNode", "VideoPlayer")
+    videoPlayer.content = subcategory
+    m.top.appendChild(videoPlayer)
+    videoPlayer.setFocus(true)
 end sub
 
 sub loadSubcategories(categoryId as string)
@@ -76,7 +78,7 @@ sub OnSubcategoriesLoaded()
     for each subcategory in subcategories
         item = content.CreateChild("ContentNode")
         item.title = subcategory.name
-        ' item.description = FormatJson(subcategory)
+        item.description = FormatJson(subcategory)
     end for
 
     m.subcategoriesList.content = content
@@ -84,15 +86,22 @@ sub OnSubcategoriesLoaded()
     m.subcategoriesLabel.visible = true
 end sub
 
-' function onKeyEvent(key as string, press as boolean) as boolean
-'     if press then
-'         if key = "back"
-'             return false
-'         else if key = "OK"
-'             category = m.categoriesList.content.getChild(m.categoriesList.itemSelected)
-'             print "Selected category: "; category.title
-'             return true
-'         end if
-'     end if
-'     return true
-' end function
+function onKeyEvent(key as string, press as boolean) as boolean
+    handled = false
+    if press then
+        if key = "right"
+            if m.subcategoriesList.content <> invalid and m.subcategoriesList.content.getChildCount() > 0
+                m.categoriesList.setFocus(false)
+                m.subcategoriesList.setFocus(true)
+                handled = true
+            end if
+        else if key = "left"
+            if m.subcategoriesList.hasFocus()
+                m.subcategoriesList.setFocus(false)
+                m.categoriesList.setFocus(true)
+                handled = true
+            end if
+        end if
+    end if
+    return handled
+end function

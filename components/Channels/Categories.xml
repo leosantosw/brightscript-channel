@@ -17,29 +17,25 @@
             color="#F9F9F9"
             horizAlign="center"
             width="302"
-            translation="[260,110]"
+            translation="[230,110]"
             visible="false"
         />
-        
-        <LayoutGroup 
-            translation="[0,140]"
-            horizAlignment="left"
-            layoutDirection="horiz"
-        >
-            <MarkupList
-                id="categoriesList"
-                itemComponentName="GradientRectangle"
-                itemSize="[302, 62]"
-                itemSpacing="[0, 6]"
-                drawFocusFeedback="false"
-            />
-            <MarkupList
-                id="subcategoriesList"
-                itemComponentName="GradientRectangle"
-                itemSize="[302, 62]"
-                itemSpacing="[0, 6]"
-                drawFocusFeedback="false"
-            />
-        </LayoutGroup>
+        <MarkupList
+            id="categoriesList"
+            itemComponentName="ListItem"
+            itemSize="[302, 62]"
+            itemSpacing="[0, 6]"
+            drawFocusFeedback="false"
+            translation="[30, 150]"  
+        />
+        <MarkupList
+            id="subcategoriesList"
+            itemComponentName="ListItem"
+            itemSize="[302, 62]"
+            itemSpacing="[0, 6]"
+            drawFocusFeedback="false"
+            translation="[342, 150]"  
+            visible="false"
+        />
     </children>
 </component>

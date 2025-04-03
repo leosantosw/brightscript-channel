@@ -18,9 +18,15 @@ function RemoveUnicode(text as string) as string
 end function
 
 sub showfocus()
-    if m.top.focusPercent then
-        m.border.visible = true
-        m.background.blendColor = "#192542"
+    if m.top.focusPercent > 0
+        parent = m.top.getParent()
+        if parent.hasFocus()
+            m.border.visible = true
+            m.background.blendColor = "#192542"
+        else
+            m.border.visible = false
+            m.background.blendColor = "#08111f"
+        end if
     else
         m.border.visible = false
         m.background.blendColor = "#08111f"
