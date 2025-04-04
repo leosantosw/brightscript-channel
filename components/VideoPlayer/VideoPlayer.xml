@@ -5,6 +5,8 @@
     
     <interface>
         <field id="content" type="node" onChange="onContentSet"/>
+        <field id="closeVideo" type="boolean" alwaysNotify="true"/>
+        <field id="videoMode" type="string" value="fullscreen" onChange="onVideoModeChanged"/>
     </interface>
     
     <children>

@@ -53,10 +53,19 @@ end sub
 sub OnSubcategorySelected()
     index = m.subcategoriesList.itemSelected
     subcategory = m.subcategoriesList.content.getChild(index)
-    videoPlayer = createObject("RoSGNode", "VideoPlayer")
-    videoPlayer.content = subcategory
-    m.top.appendChild(videoPlayer)
-    videoPlayer.setFocus(true)
+    m.videoPlayer = createObject("RoSGNode", "VideoPlayer")
+    m.videoPlayer.content = subcategory
+    m.top.appendChild(m.videoPlayer)
+    m.videoPlayer.setFocus(true)
+    m.videoPlayer.observeField("closeVideo", "OnCloseVideo")
+end sub
+
+sub OnCloseVideo()
+    if m.videoPlayer.closeVideo then
+        ' m.top.removeChild(m.videoPlayer)
+        ' m.videoPlayer = invalid
+        m.subcategoriesList.setFocus(true)
+    end if
 end sub
 
 sub loadSubcategories(categoryId as string)
