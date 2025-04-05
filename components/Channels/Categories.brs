@@ -11,6 +11,9 @@ function init()
     m.categoriesLabel = m.top.findNode("categoriesLabel")
     m.subcategoriesLabel = m.top.findNode("subcategoriesLabel")
 
+    m.videoPlayer = createObject("RoSGNode", "VideoPlayer")
+    m.top.appendChild(m.videoPlayer)
+
     loadContent()
 end function
 
@@ -53,18 +56,13 @@ end sub
 sub OnSubcategorySelected()
     index = m.subcategoriesList.itemSelected
     subcategory = m.subcategoriesList.content.getChild(index)
-    m.videoPlayer = createObject("RoSGNode", "VideoPlayer")
-    m.videoPlayer.content = subcategory
-    m.top.appendChild(m.videoPlayer)
-    m.videoPlayer.setFocus(true)
-    m.videoPlayer.observeField("closeVideo", "OnCloseVideo")
-end sub
+    print "Subcategory selected"; subcategory.title
 
-sub OnCloseVideo()
-    if m.videoPlayer.closeVideo then
-        ' m.top.removeChild(m.videoPlayer)
-        ' m.videoPlayer = invalid
-        m.subcategoriesList.setFocus(true)
+    if m.videoPlayer.payload <> invalid and m.videoPlayer.payload.title = subcategory.title
+        m.videoPlayer.videoMode = "fullscreen"
+        m.videoPlayer.setFocus(true)
+    else
+        m.videoPlayer.payload = subcategory
     end if
 end sub
 
@@ -98,7 +96,12 @@ end sub
 function onKeyEvent(key as string, press as boolean) as boolean
     handled = false
     if press then
-        if key = "right"
+        if key = "back" and m.subcategoriesList.hasFocus()
+            print "Back key pressed on subcategories list"
+            m.categoriesList.setFocus(true)
+            m.subcategoriesList.setFocus(false)
+            handled = true
+        else if key = "right"
             if m.subcategoriesList.content <> invalid and m.subcategoriesList.content.getChildCount() > 0
                 m.categoriesList.setFocus(false)
                 m.subcategoriesList.setFocus(true)
