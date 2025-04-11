@@ -1,6 +1,7 @@
 sub init()
     m.video = m.top.findNode("videoPlayer")
     m.video.visible = false
+    m.video.enableUI = false
     m.top.observeField("payload", "onContentSet")
     m.top.observeField("videoMode", "onVideoModeChanged")
     m.lastStreamUrl = ""
@@ -10,12 +11,6 @@ sub onContentSet()
     payload = m.top.payload
     if payload = invalid then return
 
-    ' if m.video.payload = payload then
-    '     m.top.videoMode = "fullscreen"
-    '     print "Video already set"
-    '     return
-    ' end if
-
     m.video.visible = true
 
     desc = ParseJson(payload.description)
@@ -23,7 +18,6 @@ sub onContentSet()
 
     streamUrl = buildStreamUrl(desc)
     print "Stream URL: "; streamUrl
-    print "Last Stream URL: "; m.lastStreamUrl
 
     m.lastStreamUrl = streamUrl
 
@@ -39,6 +33,7 @@ sub onContentSet()
     m.video.content = videoContent
     m.video.control = "play"
     m.top.videoMode = "pip"
+    m.video.observeField("state", "onVideoStateChanged")
 end sub
 
 sub onVideoModeChanged()
@@ -53,6 +48,16 @@ sub onVideoModeChanged()
     end if
 end sub
 
+sub onVideoStateChanged()
+    state = m.video.state
+
+    if state = "playing"
+    else if state = "buffering"
+        print "Buffering..."
+    else if state = "error"
+        showErrorDialog("Erro ao reproduzir o conteúdo")
+    end if
+end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
     if not press then return false
@@ -68,27 +73,10 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.top.getScene().findNode("subcategoriesList").setFocus(true)
             return true
         end if
-    else if key = "OK"
-        if m.top.videoMode = "fullscreen"
-            m.top.videoMode = "pip"
-        else
-            m.top.videoMode = "fullscreen"
-        end if
-        return true
     end if
 
     return true
 end function
-
-' m.video.observeField("state", "onVideoStateChanged")
-' sub onVideoStateChanged()
-'     state = m.video.state
-
-'     if state = "error"
-'         showErrorDialog("Erro ao reproduzir o conteúdo")
-'     end if
-' end sub
-
 
 sub showErrorDialog(message as string)
     dialog = createObject("roSGNode", "Dialog")

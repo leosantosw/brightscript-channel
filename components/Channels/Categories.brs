@@ -14,10 +14,10 @@ function init()
     m.videoPlayer = createObject("RoSGNode", "VideoPlayer")
     m.top.appendChild(m.videoPlayer)
 
-    loadContent()
+    LoadCategoriesContent()
 end function
 
-sub loadContent()
+sub LoadCategoriesContent()
     m.spinner.visible = true
     m.contentTask = CreateObject("roSGNode", "ChannelsCategoriesTask")
     m.contentTask.ObserveField("categories", "OnCategoriesLoaded")
@@ -50,7 +50,7 @@ sub OnCategorySelected()
     index = m.categoriesList.itemSelected
     selectedItem = m.categoriesList.content.getChild(index)
     categoryData = ParseJson(selectedItem.description)
-    loadSubcategories(categoryData.category_id)
+    LoadSubcategories(categoryData.category_id)
 end sub
 
 sub OnSubcategorySelected()
@@ -66,9 +66,10 @@ sub OnSubcategorySelected()
     end if
 end sub
 
-sub loadSubcategories(categoryId as string)
+sub LoadSubcategories(categoryId as string)
     m.subcategoriesList.visible = false
     m.spinner.visible = true
+    m.spinner.translation = [390, 250]
     m.subcategoriesTask = CreateObject("roSGNode", "SubcategoriesTask")
     m.subcategoriesTask.categoryId = categoryId
 
@@ -78,7 +79,6 @@ sub loadSubcategories(categoryId as string)
 end sub
 
 sub OnSubcategoriesLoaded()
-    m.spinner.visible = false
     subcategories = m.subcategoriesTask.subcategories
     content = CreateObject("roSGNode", "ContentNode")
 
@@ -89,6 +89,7 @@ sub OnSubcategoriesLoaded()
     end for
 
     m.subcategoriesList.content = content
+    m.spinner.visible = false
     m.subcategoriesList.visible = true
     m.subcategoriesLabel.visible = true
 end sub
