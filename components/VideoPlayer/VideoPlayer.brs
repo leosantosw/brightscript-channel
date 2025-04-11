@@ -52,8 +52,8 @@ sub onVideoStateChanged()
     state = m.video.state
 
     if state = "playing"
-    else if state = "buffering"
-        print "Buffering..."
+        ' else if state = "buffering"
+        '     print "Buffering..."
     else if state = "error"
         showErrorDialog("Erro ao reproduzir o conteúdo")
     end if

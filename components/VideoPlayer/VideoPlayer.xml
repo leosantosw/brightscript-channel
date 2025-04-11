@@ -4,8 +4,8 @@
     <script type="text/brightscript" uri="pkg:/components/Tasks/utils/LoadSavedPlaylist.brs"/>
     
     <interface>
-        <field id="payload" type="node" onChange="onContentSet"/>
-        <field id="videoMode" type="string" value="fullscreen" onChange="onVideoModeChanged"/>
+        <field id="payload" type="node" />
+        <field id="videoMode" type="string" value="fullscreen" />
     </interface>
     
     <children>

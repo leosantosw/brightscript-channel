@@ -2,7 +2,9 @@
 <component name="ListItem" extends="Group">
     <interface>
         <field id="itemContent" type="node" onChange="updateTitle"/>
-        <field id="focusPercent" type="float" onChange="showfocus" />
+        <!-- <field id="focusPercent" type="float" onChange="showfocus" /> -->
+        <field id="itemFocused" type="integer" alwaysNotify="true" />  
+        <field id="itemIndex" type="integer" />
     </interface>
     <script type="text/brightscript" uri="pkg:/components/ListItem/ListItem.brs"/>
     <children>
@@ -11,7 +13,7 @@
             uri="pkg:/images/rounded-$$RES$$.9.png" 
             width="302" 
             height="62"
-            blendColor="#315ea3"
+            blendColor="#1d2a3d"
             translation="[0,0]"
             visible="false"
         />
@@ -21,7 +23,7 @@
             uri="pkg:/images/rounded-$$RES$$.9.png" 
             width="300" 
             height="60"
-            blendColor="#08111f"
+            blendColor="#13151D"
             translation="[1,1]"
         />
 

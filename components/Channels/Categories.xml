@@ -1,5 +1,8 @@
 <component name="ChannelsCategories" extends="Group">
     <script type="text/brightscript" uri="Categories.brs" />
+    <script type="text/brightscript" uri="Subcategories.brs" />
+    <script type="text/brightscript" uri="KeyHandling.brs" />
+    <script type="text/brightscript" uri="ItemFocus.brs" />
     <children>
         <Label
             id="categoriesLabel"
