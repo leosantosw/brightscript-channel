@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="ChannelGuide" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="updateTitle"/>
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/ChannelGuide/ChannelGuide.brs"/>
+    <children>
+        <Label 
+            id="labelText"
+            width="600"
+            height="60"
+            translation="[18,3]"
+            vertAlign="center"
+            color="#ffffff"
+        />
+    </children>
+</component>

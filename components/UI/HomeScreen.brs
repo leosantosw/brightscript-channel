@@ -15,7 +15,7 @@ end sub
 
 sub onCategorySelected()
     if m.homeScreen.categorySelected = "channels"
-        category = CreateObject("roSGNode", "ChannelsCategories")
+        category = CreateObject("roSGNode", "ChannelsScreen")
         ShowScreen(category)
     end if
 

@@ -11,8 +11,8 @@ end sub
 sub OnSubcategoryFocused(event)
     index = event.getData()
     focusedItem = m.subcategoriesList.content.getChild(index)
-    print ParseJson(focusedItem.description)
-    ' load epg component here
+    channel = ParseJson(focusedItem.description)
+    LoadEpg(channel.stream_id)
 
     UpdateAllItemsFocusState(m.subcategoriesList)
 

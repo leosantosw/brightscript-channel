@@ -1,8 +1,10 @@
-<component name="ChannelsCategories" extends="Group">
+<component name="ChannelsScreen" extends="Group">
+    <script type="text/brightscript" uri="Starter.brs" />
     <script type="text/brightscript" uri="Categories.brs" />
     <script type="text/brightscript" uri="Subcategories.brs" />
     <script type="text/brightscript" uri="KeyHandling.brs" />
     <script type="text/brightscript" uri="ItemFocus.brs" />
+    <script type="text/brightscript" uri="EPG.brs" />
     <children>
         <Label
             id="categoriesLabel"
@@ -39,6 +41,16 @@
             drawFocusFeedback="false"
             translation="[342, 150]"  
             visible="false"
+        />
+
+        <MarkupList
+            id="channelsGuideList"
+            itemComponentName="ChannelGuide"
+            itemSize="[600, 62]"
+            itemSpacing="[0, 6]"
+            drawFocusFeedback="false"
+            translation="[660, 500]"  
+            visible="true"
         />
     </children>
 </component>
